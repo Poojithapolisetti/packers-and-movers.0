@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('truck2.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            width: 100%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0; /* Start from the top */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            padding: 20px;
+            box-sizing: border-box; /* Ensure padding does not affect size */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto; /* Center horizontally */
+            overflow-x: auto;
+        }
+        .profile-info {
+            margin-bottom: 30px;
+        }
+        .profile-info p {
+            font-size: 18px;
+        }
+        h1, h3 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+        }
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #343a40;
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .profile-info p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay">
+            <div class="container">
+                <h1>Profile</h1>
+                <div id="profileInfo" class="profile-info"></div>
+                <h3>Booking History</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Company</th>
+                                <th>Cost</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingHistory"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('ProfileServlet')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('profileInfo').innerHTML = `
+                    <p><strong>Username:</strong> ${data.username}</p>
+                    <p><strong>Email:</strong> ${data.email}</p>
+                `;
+
+                let bookingHistory = '';
+                data.bookingHistory.forEach(booking => {
+                    bookingHistory += `
+                        <tr>
+                            <td>${booking.bookingId}</td>
+                            <td>${booking.fromLocation}</td>
+                            <td>${booking.toLocation}</td>
+                            <td>${booking.company}</td>
+                            <td>${booking.cost}</td>
+                            <td>${booking.bookingDate}</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById('bookingHistory').innerHTML = bookingHistory;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

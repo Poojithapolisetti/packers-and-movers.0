@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <style>
+        /* Add some custom styles to make it look better */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('mover.jpg');
+            background-color: #f5f5f5; /* light gray background */
+            background-size: cover; /* cover the whole background */
+            background-position: center; /* center the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s, color 0.5s; /* smooth transition for theme change */
+        }
+        .container {
+            max-width: 800px; /* adjust the container width */
+            padding: 20px; /* add some padding to the container */
+            background-color: rgba(255, 255, 255, 0.8); /* white background with opacity */
+            border: 1px solid #ddd; /* add a border to the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow */
+            border-radius: 10px; /* rounded corners */
+            text-align: center; /* center align the text */
+            transition: background-color 0.5s, color 0.5s; /* smooth transition for theme change */
+        }
+        .logo {
+            max-width: 100px; /* adjust the logo width */
+            margin-bottom: 20px; /* space below the logo */
+        }
+        h2 {
+            font-size: 30px;
+            color: #333; /* dark gray text color */
+            font-weight: bold; /* make the text bold */
+        }
+        .quote {
+            font-size: 20px; /* smaller font size for the quote */
+            color: #555; /* dark gray text color */
+            margin: 10px 0; /* add some margin for spacing */
+        }
+        p {
+            font-size: 18px; /* increase the font size */
+            color: #666; /* dark gray text color */
+        }
+        .btn {
+            margin-bottom: 10px; /* add some margin to the buttons */
+        }
+        .btn-primary {
+            background-color: #337ab7; /* override the default primary button color */
+            border-color: #337ab7; /* override the default primary button border color */
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%; /* make the container more responsive */
+                padding: 15px; /* adjust the padding for smaller screens */
+            }
+            h2 {
+                font-size: 24px; /* adjust the font size for smaller screens */
+            }
+            .quote {
+                font-size: 18px; /* adjust the font size for smaller screens */
+            }
+            p {
+                font-size: 16px; /* adjust the font size for smaller screens */
+            }
+        }
+        /* Dark mode styles */
+        .dark-mode body {
+            background-color: #121212; /* dark background color */
+            color: #e0e0e0; /* light text color */
+        }
+        .dark-mode .container {
+            background-color: rgba(33, 33, 33, 0.8); /* dark background with opacity */
+            border: 1px solid #555; /* darker border */
+        }
+        .dark-mode h2, .dark-mode .quote, .dark-mode p {
+            color: #e0e0e0; /* light text color */
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-secondary toggle-btn" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+        <h2>Welcome to Packers & Movers Service</h2>
+        <p class="quote">"Choose Porter Packers & Movers for hassle-free house shifting! From packing to stacking, we manage it all."</p>
+        <p>Choose an option:</p>
+        <a href="login1.html" class="btn btn-primary mr-3">User Login</a>
+        <a href="registration.html" class="btn btn-primary mr-3">Register</a>
+        <a href="admin-login.html" class="btn btn-primary mr-3">Admin Login</a>
+        <a href="faq.html" class="btn btn-primary mr-3">FAQs</a>
+           </div>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Companies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background: url('truck2.jpg') no-repeat center center/cover;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            margin-top: 40px; /* Increased margin-top */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2; /* Ensures the container is above the overlay */
+        }
+
+        h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title-container img {
+            margin-right: 10px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="title-container">
+            <img src="logo.png" alt="Company Logo">
+            <h2 class="mt-3">Companies</h2>
+        </div>
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Phone Number</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody id="companiesTable">
+                <!-- Companies will be populated here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Fetch companies from the server
+        fetch('ViewCompaniesServlet')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Companies data:', data); // Debugging: log the data
+                const table = document.getElementById('companiesTable');
+                data.forEach(company => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${company.company_name}</td>
+                        <td>${company.phone_number}</td>
+                        <td>${company.rating}</td>
+                    `;
+                    table.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching companies:', error));
+    </script>
+</body>
+
+</html>

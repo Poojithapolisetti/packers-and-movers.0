@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CalculateCostServlet</servlet-name>
+        <servlet-class>CalculateCostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculateCostServlet</servlet-name>
+        <url-pattern>/CalculateCostServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CompanyListServlet</servlet-name>
+        <servlet-class>CompanyListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CompanyListServlet</servlet-name>
+        <url-pattern>/CompanyListServlet</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>BookingHistoryServlet</servlet-name>
+        <servlet-class>BookingHistoryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingHistoryServlet</servlet-name>
+        <url-pattern>/BookingHistoryServlet</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/ProfileServlet</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>AdminBookingHistoryServlet</servlet-name>
+        <servlet-class>AdminBookingHistoryServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AdminBookingHistoryServlet</servlet-name>
+        <url-pattern>/AdminBookingHistoryServlet</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>AdminLoginServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <servlet-class>UserProfileServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <url-pattern>/UserProfileServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <servlet-name>ViewCompaniesServlet.java</servlet-name>
+        <servlet-class>ViewCompaniesServlet.java</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewCompaniesServlet.java</servlet-name>
+        <url-pattern>/ViewCompaniesServlet.java</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <servlet-name>CancelBookingServlet</servlet-name>
+        <servlet-class>CancelBookingServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>CancelBookingServlet</servlet-name>
+        <url-pattern>/CancelBookingServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>

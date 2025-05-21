@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('truck2.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .btn-custom {
+            background-color:#337ab7; /* Custom color */
+            border-color: #337ab7;
+            color: #fff;
+            margin-bottom: 20px; /* Space between buttons */
+        }
+        .btn-custom:hover {
+            background-color: #007bff; /* Darker color on hover */
+            border-color: #007bff;
+        }
+        .logo {
+            position: absolute;
+            top: 20px; /* Adjust top position */
+            left: 20px; /* Adjust left position */
+            max-height: 50px; /* Adjust size as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay">
+            <div class="container">
+                <img src="logo.png" alt="Logo" class="logo"> <!-- Replace with your logo URL -->
+                <h2>Admin Dashboard</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="view-companies.html" class="btn btn-custom btn-block">View Companies</a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="admindashboard.html" class="btn btn-custom btn-block">Check Booking History</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

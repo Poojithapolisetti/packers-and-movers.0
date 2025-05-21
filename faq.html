@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <title>Packers and Movers FAQs</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            background-image: url('truck2.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .faq-container {
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .faq-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .faq-container p {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: dropUp 0.6s ease-out forwards;
+        }
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            background-color: #f7f7f7;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background-color: #fff;
+        }
+        .arrow {
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .arrow {
+            transform: rotate(90deg);
+        }
+        @keyframes dropUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay">
+            <div class="faq-container">
+                <h2>Frequently Asked Questions</h2>
+                <p>Here are some of the top FAQs to support you. Please do feel free to reach out to us for any questions that you might have had but are not answered by the following.</p>
+                <div class="faq-item">
+                    <div class="faq-question">Why does the final charges vary from the estimates?<span class="arrow">▶</span></div>
+                    <div class="faq-answer">
+                        Our charges are fixed. What you see is what you pay. Prices are subjected to revision if there is change in the location or final item list. Rates can also change basis the complexity of shifting.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do packers and movers dismantle and assemble furniture?<span class="arrow">▶</span></div>
+                    <div class="faq-answer">
+                        Yes, we do complete dismantling & assembly of furniture wherever possible. Most furnitures do not need dismantling but large beds and dining tables may be dismantled to move safely.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is there any restriction on material taken by packers and movers?<span class="arrow">▶</span></div>
+                    <div class="faq-answer">
+                        We don't allow flammable goods like Gasoline, Oxygen bottles, Lighter fluid, Matches, Propane cylinders, Nail polish remover, Paints and Fireworks.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the cheapest way to relocate?<span class="arrow">▶</span></div>
+                    <div class="faq-answer">
+                        Our packers & movers help you with complete solution starting from packing the goods, loading unloading, dismantling-assemly etc. But if you have already packed your goods and are ready to do some heavylifting, you can book our mini trucks and save money.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Does Porter provide only labour or helper along with transport for house shifting?<span class="arrow">▶</span></div>
+                    <div class="faq-answer">
+                        Yes, if you have already packed your goods and need help in loading & unloading, you can book Ace helper or 3-wheeler helper from our App. The Driver partner will help you in ground to ground floor movement of goods.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do packers and movers pack everything?<span class="arrow">▶</span></div>
+                    <div class="faq-answer">
+                        Packers and movers will pack everything safely including fragile and valuable items. Our packers will use bubble wraps, wrapping paper, cardboard boxes, wrapping foam, packing tapes, thermocol sheet so goods will be safely transported but they won't take flammable goods.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const faqItem = item.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Animation for FAQ items
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+            faqItems.reverse().forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 300); // delay for each item
+            });
+        });
+    </script>
+</body>
+</html>
